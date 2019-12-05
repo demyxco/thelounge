@@ -18,6 +18,8 @@ before_install:
 script:
   - docker build --no-cache -t demyx/"$DEMYX_REPOSITORY" .
   - docker run -d --rm --name="$DEMYX_REPOSITORY" demyx/"$DEMYX_REPOSITORY"
+  - docker logs thelounge
+  - docker exec -t thelounge thelounge --version
 
 after_success:
   - echo "$DEMYX_PASSWORD" | docker login -u "$DEMYX_USERNAME" --password-stdin
