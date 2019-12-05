@@ -3,7 +3,7 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/demyx/thelounge?style=flat&color=blue)](https://hub.docker.com/r/demyx/thelounge)
 [![Architecture](https://img.shields.io/badge/linux-amd64-important?style=flat&color=blue)](https://hub.docker.com/r/demyx/thelounge)
 [![Alpine](https://img.shields.io/badge/alpine-3.10.3-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/thelounge)
-[![The Lounge](https://img.shields.io/badge/thelounge-2.0.6-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/thelounge)
+[![The Lounge](https://img.shields.io/badge/thelounge-v3.3.0-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/thelounge)
 [![Buy Me A Coffee](https://img.shields.io/badge/buy_me_coffee-$5-informational?style=flat&color=blue)](https://www.buymeacoffee.com/VXqkQK5tb)
 
 Non-root Docker image running Alpine Linux and The Lounge.
