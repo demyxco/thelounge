@@ -30,6 +30,8 @@ These are the default environment variables.
 
 ```
 - NODE_ENV=production
+- THELOUNGE_HOME=/var/opt/thelounge
+- PORT=9000
 - TZ=America/Los_Angeles
 ```
 

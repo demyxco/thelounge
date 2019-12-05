@@ -9,6 +9,8 @@ LABEL sh.demyx.registry https://hub.docker.com/u/demyx
 # Set default environment variables
 ENV TZ=America/Los_Angeles
 ENV NODE_ENV=production
+ENV THELOUNGE_HOME=/var/opt/thelounge
+ENV PORT=9000
 
 # Create demyx user and install tzdata
 RUN set -ex; \
@@ -20,9 +22,11 @@ RUN set -ex; \
 RUN set -ex; \
     yarn --non-interactive --frozen-lockfile global add thelounge; \
     yarn --non-interactive cache clean; \
-    install -d -m 0755 -o demyx -g demyx /var/opt/thelounge
+    install -d -m 0755 -o demyx -g demyx "$THELOUNGE_HOME"
 
-EXPOSE 9000
+EXPOSE "$PORT"
+
+WORKDIR "$THELOUNGE_HOME"
 
 USER demyx
 
