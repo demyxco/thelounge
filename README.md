@@ -5,6 +5,8 @@
 [![Alpine](https://img.shields.io/badge/alpine-3.10.3-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/thelounge)
 [![The Lounge](https://img.shields.io/badge/thelounge-v3.3.0-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/thelounge)
 [![Buy Me A Coffee](https://img.shields.io/badge/buy_me_coffee-$5-informational?style=flat&color=blue)](https://www.buymeacoffee.com/VXqkQK5tb)
+[![Become a Patron!](https://img.shields.io/badge/become%20a%20patron-$5-informational?style=flat&color=blue)](https://www.patreon.com/bePatron?u=23406156)
+[![Become a Patron!](https://img.shields.io/badge/become%20a%20patron-$5-informational?style=flat&color=blue)](https://www.patreon.com/bePatron?u=23406156)
 
 Non-root Docker image running Alpine Linux and The Lounge.
 
