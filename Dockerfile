@@ -16,7 +16,7 @@ ENV PORT=9000
 RUN set -ex; \
     addgroup -g 1001 -S demyx; \
     adduser -u 1001 -D -S -G demyx demyx; \
-    apk add --no-cache --update tzdata
+    apk add --no-cache --update git tzdata
 
 # Finalize
 RUN set -ex; \
