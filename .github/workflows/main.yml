@@ -1,0 +1,43 @@
+name: demyx/thelounge
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron:  '0 0 * * 6'
+
+jobs:
+  master:
+    runs-on: ubuntu-latest
+    env:
+      DEMYX_REPOSITORY: thelounge
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Login
+        uses: docker/login-action@v1
+        with:
+          username: demyx
+          password: ${{ secrets.DOCKER_TOKEN }}
+      - name: Build
+        run: |
+          docker pull node:alpine
+          docker build -t demyx/${{ env.DEMYX_REPOSITORY }} .
+      - name: Push
+        run: |
+          # Not sure why this is being created?
+          [[ -f typescript ]] && rm -f typescript
+
+          DEMYX_CHECK_STATUS="$(git status)"
+          if [[ "$DEMYX_CHECK_STATUS" != *"nothing to commit"* ]]; then
+            DEMYX_RANDOM_QUOTE="$(curl -s "https://api.quotable.io/random?tags=technology" | jq -r '. | "\"\(.content)\" - \(.author)"')"
+            git config --global user.name github-actions[bot]
+            git config --global user.email github-actions[bot]@users.noreply.github.com
+            git remote set-url origin https://demyxsh:${{ secrets.DEMYX_TOKEN }}@github.com/demyxsh/${{ env.DEMYX_REPOSITORY }}
+            git add .
+            git commit -m "${DEMYX_RANDOM_QUOTE:-Scheduled Build}"
+            git push
+          fi
+
+          docker push demyx/${{ env.DEMYX_REPOSITORY }}
